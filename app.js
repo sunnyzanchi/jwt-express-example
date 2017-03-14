@@ -11,6 +11,8 @@ app.use(bodyParser.json());
 app.use(jwt.init(secret, {
   cookies: false
 }));
+
+//TODO: Get error handling working
 app.use(function(err, req, res, next){
   console.log(err);
   if(err.name === 'JWTExpressError')
