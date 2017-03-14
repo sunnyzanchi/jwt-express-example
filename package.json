@@ -1,0 +1,27 @@
+{
+  "main": "app.js",
+  "dependencies": {
+    "axios": "^0.15.3",
+    "bcrypt": "^1.0.2",
+    "bluebird": "^3.5.0",
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
+    "jsonwebtoken": "^7.3.0",
+    "jwt-express": "^1.1.0",
+    "normalize.css": "^5.0.0",
+    "redis": "^2.7.0",
+    "vue": "^2.2.4",
+    "vue-router": "^2.3.0"
+  },
+  "devDependencies": {
+    "css-loader": "^0.27.3",
+    "gulp": "^3.9.1",
+    "gulp-nodemon": "^2.2.1",
+    "gulp-sass": "^3.1.0",
+    "pump": "^1.0.2",
+    "style-loader": "^0.13.2",
+    "vue-loader": "^11.1.4",
+    "vue-template-compiler": "^2.2.4",
+    "webpack": "^2.2.1"
+  }
+}
