@@ -17,7 +17,7 @@ export default {
   async created(){
     const opts = {
       headers: {
-        Authorization: 'Bearer ' + sessionStorage.getItem('token')
+        Authorization: 'Bearer ' + localStorage.getItem('token')
       }
     }
     try{

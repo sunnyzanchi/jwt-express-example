@@ -32,7 +32,7 @@ export default {
           user: this.user,
           pass: this.pass
         });
-        sessionStorage.setItem('token', data);
+        localStorage.setItem('token', data);
         this.$router.push('/');
       }
       catch(err){
