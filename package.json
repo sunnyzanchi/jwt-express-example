@@ -1,5 +1,10 @@
 {
+  "name": "jwt-express-example",
+  "version": "0.1.0",
+  "description": "Example showing auth with JWT on Express",
   "main": "app.js",
+  "author": "Zanchi",
+  "license": "MIT",
   "dependencies": {
     "axios": "^0.15.3",
     "bcrypt": "^1.0.2",
