@@ -35,12 +35,18 @@ router.post('/login', async function(req, res){
 router.post('/create', async function(req, res){
   const {user, pass} = req.body;
 
+  if(!user || !pass)
+    return res.status(400).send('user and pass are required');
+
   const saltRounds = 12;
   const salt = await bcrypt.genSalt(saltRounds);
   const hash = await bcrypt.hash(pass, salt);
 
-  // put new user in redis
-  client.set(user, hash);
+  // try to put new user in redis
+  const alreadyExists = await client.setnxAsync(user, hash) === 0;
+
+  if(alreadyExists)
+    return res.status(409).send('User already exists');
 
   res.status(201).send('User created!');
 });
