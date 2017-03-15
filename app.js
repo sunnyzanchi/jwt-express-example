@@ -12,20 +12,19 @@ app.use(jwt.init(secret, {
   cookies: false
 }));
 
-//TODO: Get error handling working
+app.get('/protected', jwt.valid(), function(req, res){
+  res.send('Top secret data!');
+})
+
+const auth = require('./routes/auth');
+app.use(auth);
+
 app.use(function(err, req, res, next){
-  console.log(err);
   if(err.name === 'JWTExpressError')
     // user is unauthorized
     return res.status(401).send();
 
   next(err);
 });
-
-app.get('/protected', jwt.valid(), function(req, res){
-  res.send('Top secret data!');
-})
-const auth = require('./routes/auth');
-app.use(auth);
 
 app.listen(3000);
