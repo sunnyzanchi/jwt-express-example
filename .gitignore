@@ -51,3 +51,6 @@ public/js
 
 # JWT Secret Key
 secret.json
+
+# Redis config
+redis.json
