@@ -9,7 +9,7 @@ const app = express();
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
 app.use(jwt.init(secret, {
-  /* We're using the Authorization header instead
+  /* We're using the Authorization header instead of a cookie
    * Expects the token like so:
    * Authorization: Bearer <token>
    */
