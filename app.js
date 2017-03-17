@@ -20,6 +20,10 @@ app.get('/protected', jwt.valid(), function(req, res){
   res.send('Top secret data!');
 })
 
+app.get('/non-protected', function(req, res){
+  res.send('Regular non-privileged data');
+});
+
 const auth = require('./routes/auth');
 app.use(auth);
 

@@ -1,11 +1,30 @@
 <style lang="css">
+  .home h1{
+    text-align: center;
+  }
+  .home nav{
+    display: flex;
+    justify-content: space-around;
+  }
+  .home .info{
+    margin: 25px 10px;
+  }
+  .container{
+    max-width: 600px;
+    margin: 0 auto;
+  }
 </style>
 <template lang="html">
   <div class="container home">
     <h1>Home</h1>
-    <router-link to="/login">Login</router-link>
-    <router-link to="/create">Create</router-link>
-    <div class="protected">
+    <nav>
+      <router-link to="/login">Login</router-link>
+      <router-link to="/create">Create</router-link>
+    </nav>
+    <div class="non-protected info">
+      {{regularData}}
+    </div>
+    <div class="protected info">
       {{secretData}}
     </div>
   </div>
@@ -20,14 +39,17 @@ export default {
         Authorization: 'Bearer ' + localStorage.getItem('token')
       }
     }
-    try{
-      const {data} = await axios.get('/protected', opts);
-      this.secretData = data;
-    }
-    catch(err){}
+
+    axios.get('/protected', opts)
+    .then(({data}) => this.secretData = data);
+
+    axios.get('/non-protected')
+    .then(({data}) => this.regularData = data)
+    .catch(err => this.regularData = 'Unable to load regular data');
   },
   data(){
     return {
+      regularData: null,
       secretData: null
     }
   }

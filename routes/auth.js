@@ -29,7 +29,7 @@ router.post('/login', async function(req, res){
     const token = await jwt.signAsync({user}, secret, {expiresIn: '1h'});
     res.status(200).send(token);
   }
-  else res.status(401).send();
+  else res.status(401).send('Incorrect username or password');
 });
 
 router.post('/create', async function(req, res){
