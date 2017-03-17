@@ -9,6 +9,10 @@ const app = express();
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
 app.use(jwt.init(secret, {
+  /* We're using the Authorization header instead
+   * Expects the token like so:
+   * Authorization: Bearer <token>
+   */
   cookies: false
 }));
 
@@ -25,6 +29,11 @@ app.use(function(err, req, res, next){
     return res.status(401).send();
 
   next(err);
+});
+
+// app level error handler
+app.use(function(err, req, res, next){
+  return res.status(500).send(err);
 });
 
 app.listen(3000);
