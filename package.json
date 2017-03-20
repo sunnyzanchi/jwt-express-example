@@ -17,23 +17,22 @@
     "bcrypt": "^1.0.2",
     "bluebird": "^3.5.0",
     "body-parser": "^1.17.1",
+    "css-loader": "^0.27.3",
     "express": "^4.15.2",
+    "gulp": "^3.9.1",
     "jsonwebtoken": "^7.3.0",
     "jwt-express": "^1.1.0",
     "normalize.css": "^5.0.0",
-    "redis": "^2.7.0",
-    "vue": "^2.2.4",
-    "vue-router": "^2.3.0"
-  },
-  "devDependencies": {
-    "css-loader": "^0.27.3",
-    "gulp": "^3.9.1",
-    "gulp-nodemon": "^2.2.1",
-    "gulp-sass": "^3.1.0",
     "pump": "^1.0.2",
-    "style-loader": "^0.13.2",
+    "redis": "^2.7.0",
+    "style-loader": "^0.14.1",
+    "vue": "^2.2.4",
     "vue-loader": "^11.1.4",
+    "vue-router": "^2.3.0",
     "vue-template-compiler": "^2.2.4",
     "webpack": "^2.2.1"
+  },
+  "devDependencies": {
+    "gulp-nodemon": "^2.2.1"
   }
 }
