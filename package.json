@@ -9,7 +9,7 @@
     "node": "7.7.1"
   },
   "scripts": {
-    "postinstall": "gulp webpack",
+    "postinstall": "webpack",
     "start": "node ./app.js"
   },
   "dependencies": {
