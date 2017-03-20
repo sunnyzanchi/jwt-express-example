@@ -6,7 +6,7 @@ const router = express.Router();
 // redis connection
 const redis = require('redis');
 const config = require('../redis.json');
-const client = redis.createClient(config);
+const client = redis.createClient(process.env.REDIS_URL || config);
 bluebird.promisifyAll(redis.RedisClient.prototype);
 bluebird.promisifyAll(redis.Multi.prototype);
 
