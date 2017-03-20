@@ -2,10 +2,11 @@ const bcrypt = require('bcrypt');
 const bluebird = require('bluebird');
 const express = require('express');
 const router = express.Router();
+const optional = require('optional');
 
 // redis connection
 const redis = require('redis');
-const config = require('../redis.json');
+const config = optional('../redis.json');
 const client = redis.createClient(process.env.REDIS_URL || config);
 bluebird.promisifyAll(redis.RedisClient.prototype);
 bluebird.promisifyAll(redis.Multi.prototype);
