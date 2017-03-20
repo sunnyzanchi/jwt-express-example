@@ -40,4 +40,4 @@ app.use(function(err, req, res, next){
   return res.status(500).send(err);
 });
 
-app.listen(3000);
+app.listen(process.env.PORT || 3000);

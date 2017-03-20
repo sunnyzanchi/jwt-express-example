@@ -5,6 +5,13 @@
   "main": "app.js",
   "author": "Zanchi",
   "license": "MIT",
+  "engines": {
+    "node": "7.7.1"
+  },
+  "scripts": {
+    "postinstall": "gulp",
+    "start": "node ./app.js"
+  },
   "dependencies": {
     "axios": "^0.15.3",
     "bcrypt": "^1.0.2",
