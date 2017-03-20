@@ -8,3 +8,5 @@ Add your secret as a plain string in `secret.json` in the root. Look at `example
 
 1. Run `yarn`
 2. Run `gulp`
+
+You can see it in action at https://jwt-auth-example.herokuapp.com/ (it might take a second to load, it's hosted on the free tier)
